@@ -1,12 +1,22 @@
+
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import * as ReactDOMClient from 'react-dom/client';
+import App from './App';
+import { BrowserRouter } from "react-router-dom";
 
-import App from "./App"
+const container = document.getElementById('root');
 
-ReactDOM.render(
-    <Router>
+// Create a root.
+const root = ReactDOMClient.createRoot(container);
+
+// Initial render: Render an element to the root.
+root.render( 
+<BrowserRouter>
+    <App />
+</BrowserRouter>);
+
+// During an update, there's no need to pass the container again.
+root.render(
+    <BrowserRouter>
         <App />
-    </Router>,
-    document.getElementById('root')
-);
+    </BrowserRouter>);
