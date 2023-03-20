@@ -13,7 +13,9 @@ const Navbar = () => {
             <Typography.Title level={2}  className="logo">
                 <Link to="/">Cryptoverse</Link>
             </Typography.Title>
-            <Menu theme='dark'>
+            
+        </div>
+        <Menu theme='dark'>
                 <Menu.Item icon={<HomeOutlined />}>
                     <Link to="/">Home</Link>
                 </Menu.Item>
@@ -27,7 +29,6 @@ const Navbar = () => {
                     <Link to="/news">news</Link>
                 </Menu.Item>
             </Menu>
-        </div>
     </div>
   )
 }
