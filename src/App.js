@@ -34,7 +34,7 @@ const App = () => {
             All right reserved
           </Typography.Title>
           <Space>
-            <Link to="/"></Link>
+            <Link to="/">Home</Link>
             <Link to="/ecvhanges">Exchanges</Link>
             <Link to="/news">News</Link>
           </Space>
