@@ -9,10 +9,10 @@ const {Text, Title} = Typography
 const {Option} = Select
 
 const News = ({simplified}) => {
-  const { data } = useGetCryptoNewsQuery({newsCategory:"Cryptocurrency", count: simplified ? 10 : 100})
+  const { data:cryptoNews } = useGetCryptoNewsQuery({newsCategory:"Cryptocurrency", count: simplified ? 10 : 100})
 
   // console.log(cryptoNews)
-  console.log(data)
+  console.log(cryptoNews)
 
   return (
     <div>News</div>
