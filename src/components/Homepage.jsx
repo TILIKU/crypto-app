@@ -14,7 +14,6 @@ const Homepage = () => {
 
   if (isFetching) return "loading..."
 
-  console.log(data)
 
   return (
     <>
