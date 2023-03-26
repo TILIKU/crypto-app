@@ -7,8 +7,7 @@ const cryptoApiHeaders = {
 }
 
 
-const baseUrl = 'https://coinranking1.p.rapidapi.com/coin'
-const baseCoinUrl = "https://coinranking1.p.rapidapi.com/coin"
+const baseUrl = 'https://coinranking1.p.rapidapi.com'
 
 
 
@@ -20,15 +19,19 @@ export const cryptoApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl}),
     endpoints:(builder) =>({
         getCryptos:builder.query({
-            query: (count) => createRequest(baseUrl.concat(`s/?limit=${count}`))
+            query: (count) => createRequest(baseUrl.concat(`/coins/?limit=${count}`))
         }),
         getCryptoDetails:builder.query({
-            query: (coinId) => createCoinRequest(`/${coinId}`)
+            query: (coinId) => createRequest(`/coin/${coinId}`)
+        }),
+        getCryptoHistory:builder.query({
+            //coinId here is just an object not the actual ID xdd
+            query: (coinId) => createRequest(baseUrl.concat(`/coin/${coinId?.coinId}/history/?timePeriod=${coinId?.timePeriod}`))
         })
     })
 })
 
 
 export const {
-    useGetCryptosQuery,useGetCryptoDetailsQuery
+    useGetCryptosQuery,useGetCryptoDetailsQuery,useGetCryptoHistoryQuery
 } = cryptoApi
