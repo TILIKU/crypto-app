@@ -24,7 +24,7 @@ const Navbar = () => {
       if(screenSize < 768){
         setActiveMenu(false)
       } else {
-        activeMenu(true)
+        setActiveMenu(true)
       }
     }, [screenSize])
     
@@ -48,9 +48,6 @@ const Navbar = () => {
                 </Menu.Item>
                 <Menu.Item icon={<FundOutlined />}>
                     <Link to="/cryptocurrencies">cryptocurrencies</Link>
-                </Menu.Item>
-                <Menu.Item icon={<MoneyCollectOutlined />}>
-                    <Link to="/exchanges">exchanges</Link>
                 </Menu.Item>
                 <Menu.Item icon={<BulbOutlined />}>
                     <Link to="/news">news</Link>
